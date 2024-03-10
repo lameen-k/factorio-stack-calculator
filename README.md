@@ -1,30 +1,13 @@
-# React + TypeScript + Vite
+# Factorio Stack Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a small helper app that simply shows the amount of items that can fit into a Chest, Train wagon, or Spidertron. I built it for myself because I'm a lazy person and tired of checking the stack size every time, then opening a calculator when building circuits for my train stops or planning blueprints. If you haven't heard about it yet and you're living under a rock, this helper app is for the game called **Factorio**.
 
-Currently, two official plugins are available:
+The app is built using `Vite + React & TypeScript`. Please don't judge the code; I didn't spend much time on it (I'm not building a SaaS App).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo example
 
-## Expanding the ESLint configuration
+Check out the [Demo](http://factorio.lameen.co/) to see it in action.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## License
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This project is licensed under the [MIT License](LICENSE).
