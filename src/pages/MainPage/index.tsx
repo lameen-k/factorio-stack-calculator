@@ -1,5 +1,5 @@
 import Layout from "core/Layout";
-import { containerProps, containers } from "data/containers";
+import { ContainerType, containers } from "data/containers";
 import { useEffect, useState } from "react";
 import ContainerCols from "./ContainerCols";
 import ItemsSelector from "./ItemsSelector";
@@ -9,15 +9,14 @@ import ContainersSelector from "./ContainersSelector";
 
 const MainPage = () => {
   const [item, setItem] = useState<ItemType>();
-  const [selectedContainers, setSelectedContainers] = useState<
-    containerProps[]
-  >([]);
+  const [selectedContainers, setSelectedContainers] = useState<ContainerType[]>(
+    []
+  );
   const [containersCount, setContainersCount] = useState<number[]>([
-    1, 2, 3, 4, 6, 8, 12, 18,
+    3, 4, 6, 8, 12, 18, 24,
   ]);
   useEffect(() => {
     // setItem();
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     setSelectedContainers([containers[0], containers[1], containers[2]]);
   }, []);

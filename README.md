@@ -8,6 +8,10 @@ The app is built using `Vite + React & TypeScript`. Please don't judge the code;
 
 Check out the [Demo](http://factorio.lameen.co/) to see it in action.
 
+## Data
+
+Items & gane data sources from [kirkmcdonald.github.io](https://github.com/KirkMcDonald/kirkmcdonald.github.io/blob/master/data/vanilla-1.1.19.json)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

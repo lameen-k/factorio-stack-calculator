@@ -962,7 +962,7 @@
       "localized_name": {
         "en": "Artillery cannon"
       },
-      "name": "artillery-wagon",
+      "name": "artillery-wagon-cannon",
       "order": "z[artillery]-a[cannon]",
       "stack_size": 1,
       "subgroup": "gun",
@@ -4298,11 +4298,11 @@
           "name": "electronic-circuit"
         },
         {
-          "amount": 4,
+          "amount": 2,
           "name": "plastic-bar"
         },
         {
-          "amount": 8,
+          "amount": 4,
           "name": "copper-cable"
         }
       ],
@@ -4581,15 +4581,15 @@
       "icon_row": 0,
       "ingredients": [
         {
-          "amount": 5,
+          "amount": 2,
           "name": "steel-plate"
         },
         {
-          "amount": 5,
+          "amount": 3,
           "name": "electronic-circuit"
         },
         {
-          "amount": 10,
+          "amount": 5,
           "name": "iron-gear-wheel"
         },
         {
@@ -4766,12 +4766,12 @@
         }
       },
       "enabled": false,
-      "energy_required": 5,
+      "energy_required": 4,
       "icon_col": 14,
       "icon_row": 0,
       "ingredients": [
         {
-          "amount": 40,
+          "amount": 20,
           "name": "sulfuric-acid",
           "type": "fluid"
         },
@@ -5024,20 +5024,20 @@
     },
     "burner-mining-drill": {
       "category": "crafting",
-      "energy_required": 4,
+      "energy_required": 2,
       "icon_col": 9,
       "icon_row": 1,
       "ingredients": [
         {
-          "amount": 6,
+          "amount": 3,
           "name": "iron-gear-wheel"
         },
         {
-          "amount": 2,
+          "amount": 1,
           "name": "stone-furnace"
         },
         {
-          "amount": 6,
+          "amount": 3,
           "name": "iron-plate"
         }
       ],
@@ -5063,11 +5063,11 @@
       "icon_row": 1,
       "ingredients": [
         {
-          "amount": 4,
+          "amount": 2,
           "name": "steel-plate"
         },
         {
-          "amount": 4,
+          "amount": 2,
           "name": "plastic-bar"
         },
         {
@@ -5958,15 +5958,15 @@
       "icon_row": 3,
       "ingredients": [
         {
-          "amount": 5,
+          "amount": 3,
           "name": "electronic-circuit"
         },
         {
-          "amount": 10,
+          "amount": 5,
           "name": "iron-gear-wheel"
         },
         {
-          "amount": 20,
+          "amount": 10,
           "name": "iron-plate"
         }
       ],
@@ -5991,11 +5991,11 @@
       "icon_row": 3,
       "ingredients": [
         {
-          "amount": 2,
+          "amount": 1,
           "name": "iron-plate"
         },
         {
-          "amount": 8,
+          "amount": 3,
           "name": "copper-cable"
         }
       ],
@@ -6181,11 +6181,11 @@
       "icon_row": 4,
       "ingredients": [
         {
-          "amount": 4,
+          "amount": 2,
           "name": "steel-plate"
         },
         {
-          "amount": 4,
+          "amount": 2,
           "name": "plastic-bar"
         },
         {
@@ -6296,17 +6296,17 @@
         }
       },
       "enabled": false,
-      "energy_required": 5,
+      "energy_required": 4,
       "icon_col": 8,
       "icon_row": 4,
       "ingredients": [
         {
-          "amount": 2,
+          "amount": 1,
           "name": "sulfur",
           "type": "item"
         },
         {
-          "amount": 2,
+          "amount": 1,
           "name": "coal",
           "type": "item"
         },
@@ -6408,7 +6408,7 @@
       "icon_row": 4,
       "ingredients": [
         {
-          "amount": 20,
+          "amount": 10,
           "name": "iron-gear-wheel"
         },
         {
@@ -7292,7 +7292,7 @@
       "icon_row": 6,
       "ingredients": [
         {
-          "amount": 4,
+          "amount": 2,
           "name": "iron-plate"
         }
       ],
@@ -7966,7 +7966,7 @@
           "name": "copper-plate"
         },
         {
-          "amount": 30,
+          "amount": 5,
           "name": "plastic-bar"
         }
       ],
@@ -8523,7 +8523,7 @@
       "icon_row": 9,
       "ingredients": [
         {
-          "amount": 2,
+          "amount": 1,
           "name": "iron-plate"
         }
       ],
@@ -8820,7 +8820,7 @@
           "name": "advanced-circuit"
         },
         {
-          "amount": 10,
+          "amount": 5,
           "name": "sulfuric-acid",
           "type": "fluid"
         }
@@ -10282,7 +10282,7 @@
       "icon_row": 13,
       "ingredients": [
         {
-          "amount": 10,
+          "amount": 8,
           "name": "iron-gear-wheel"
         },
         {
@@ -10290,7 +10290,7 @@
           "name": "pipe"
         },
         {
-          "amount": 50,
+          "amount": 10,
           "name": "iron-plate"
         }
       ],
@@ -10401,12 +10401,12 @@
     "steel-plate": {
       "category": "smelting",
       "enabled": false,
-      "energy_required": 32,
+      "energy_required": 16,
       "icon_col": 6,
       "icon_row": 13,
       "ingredients": [
         {
-          "amount": 10,
+          "amount": 5,
           "name": "iron-plate"
         }
       ],
@@ -10539,15 +10539,15 @@
       "icon_row": 13,
       "ingredients": [
         {
-          "amount": 15,
+          "amount": 10,
           "name": "iron-gear-wheel"
         },
         {
-          "amount": 20,
+          "amount": 5,
           "name": "copper-plate"
         },
         {
-          "amount": 30,
+          "amount": 10,
           "name": "iron-plate"
         }
       ],
@@ -10725,24 +10725,24 @@
     "tank": {
       "category": "crafting",
       "enabled": false,
-      "energy_required": 8,
+      "energy_required": 5,
       "icon_col": 0,
       "icon_row": 14,
       "ingredients": [
         {
-          "amount": 64,
+          "amount": 32,
           "name": "engine-unit"
         },
         {
-          "amount": 100,
+          "amount": 50,
           "name": "steel-plate"
         },
         {
-          "amount": 30,
+          "amount": 15,
           "name": "iron-gear-wheel"
         },
         {
-          "amount": 20,
+          "amount": 10,
           "name": "advanced-circuit"
         }
       ],

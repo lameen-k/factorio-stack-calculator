@@ -2,11 +2,11 @@
 // @ts-nocheck
 
 import { ItemType } from "data/itemType";
-import { items, groups, recipes } from "data/vanilla-1.1.19-expensive.json";
+import { items, groups, recipes } from "data/vanilla-1.1.19.json";
 import { useEffect, useState } from "react";
 import groupBy from "util/groupBy";
 
-export default function useItems() {
+export default function useItems(itemName = null) {
   const [itemsAr, setItemsAr] = useState<ItemType[]>([]);
   const [groupedItems, setGroupedItems] = useState<any>({});
   const [groupsList, setGroupsList] = useState([]);
@@ -32,8 +32,17 @@ export default function useItems() {
         .reduce((r, [k, v]) => ({ ...r, [k]: v }), {})
     );
 
-  const itemRecipe = itemName => {
-    return recipes[itemName]?.ingredients ?? [];
+  const hasReceipe = (vItemName = null) => {
+    vItemName = itemName ?? vItemName;
+    return !!Object.getOwnPropertyDescriptor(recipes, vItemName);
+  };
+  const itemIngredients = (vItemName = null) => {
+    vItemName = itemName ?? vItemName;
+    return recipes[vItemName]?.ingredients ?? [];
+  };
+  const itemResults = (vItemName = null) => {
+    vItemName = itemName ?? vItemName;
+    return recipes[vItemName]?.results ?? [];
   };
 
   useEffect(() => {
@@ -71,6 +80,8 @@ export default function useItems() {
     itemsAr,
     groupedItems,
     groupsList,
-    itemRecipe,
+    itemIngredients,
+    itemResults,
+    hasReceipe,
   };
 }

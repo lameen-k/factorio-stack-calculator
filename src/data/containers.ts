@@ -1,30 +1,13 @@
-import { items } from "data/vanilla-1.1.19-expensive.json";
+import { items } from "data/vanilla-1.1.19.json";
+import { ItemType } from "./itemType";
 
-export type containerProps = {
-  name: string;
-  slots: number;
-  icon: keyof typeof items;
+export type ContainerType = ItemType & {
+  stack_count: number;
 };
 
-export const containers = [
-  {
-    name: "Steel Chest",
-    slots: 49,
-    icon: "steel-chest",
-  },
-  {
-    name: "Cargo Wagon",
-    slots: 50,
-    icon: "cargo-wagon",
-  },
-  {
-    name: "Spidertron",
-    slots: 100,
-    icon: "spidertron",
-  },
-  {
-    name: "Car",
-    slots: 100,
-    icon: "car",
-  },
+export const containers: ContainerType[] = [
+  { ...items["steel-chest"], stack_count: 48 },
+  { ...items["cargo-wagon"], stack_count: 50 },
+  { ...items["spidertron"], stack_count: 100 },
+  { ...items["car"], stack_count: 100 },
 ];

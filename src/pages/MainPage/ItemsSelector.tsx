@@ -22,7 +22,7 @@ const ItemsSelector = (props: ItemsSelectorProps) => {
             <div
               key={idx}
               className={clsx(
-                " px-3 rounded-t py-1.5 font-medium text-yellow-200 text-opacity-80 cursor-pointer capitalize font-title text-lg",
+                " px-3 rounded-t py-1.5 font-medium text-yellow-500 cursor-pointer capitalize font-title text-lg",
                 {
                   "bg-neutral-700": isSelected,
                 }
@@ -35,11 +35,12 @@ const ItemsSelector = (props: ItemsSelectorProps) => {
         })}
       </div>
       <div className="bg-neutral-700 rounded p-4 flex gap-3 flex-wrap ">
-        {groupedItems[selectedGroup]?.map((el: ItemType, idx: number) => {
+        {groupedItems[selectedGroup]?.map((el: ItemType) => {
           return (
             <ItemIconButton
-              key={idx}
-              name={el.name}
+              key={el.name}
+              item={el}
+              size="sm"
               onClick={() => setItem(el)}
               isSelected={el.name === item?.name}
             />

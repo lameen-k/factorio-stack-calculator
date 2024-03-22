@@ -1,11 +1,12 @@
 import clsx from "clsx";
 import { ItemIconButton } from "components/ItemIcon";
-import { containerProps, containers } from "data/containers";
+import { containers } from "data/containers";
+import { ItemType } from "data/itemType";
 import { FC, useEffect, useState } from "react";
 
 type ContainersSelectorProps = {
   setSelectedContainers: any;
-  selectedContainers: containerProps[];
+  selectedContainers: ItemType[];
   containersCount: number[];
   setContainersCount: any;
 };
@@ -23,13 +24,11 @@ const ContainersSelector: FC<ContainersSelectorProps> = ({
     setCounts(containersCount);
   }, []);
   const manageSelection = ({ state, container }: any) => {
-    const isSelected = state.some(
-      (e: containerProps) => e.name === container.name
-    );
+    const isSelected = state.some((e: ItemType) => e.name === container.name);
     if (!isSelected) {
       return [...state, container];
     }
-    return state.filter((e: containerProps) => e.name !== container.name);
+    return state.filter((e: ItemType) => e.name !== container.name);
   };
 
   const manageCount = (c: number) => {
@@ -50,16 +49,17 @@ const ContainersSelector: FC<ContainersSelectorProps> = ({
   return (
     <div className="flex justify-end flex-col">
       <div className="bg-neutral-700 rounded self-end p-2 flex gap-3 flex-wrap">
-        {containers.map((container: containerProps, idx: number) => {
+        {containers.map((container, idx: number) => {
           return (
             <ItemIconButton
               key={idx}
-              name={container.icon}
+              item={container}
+              size="sm"
               isSelected={selectedContainers.some(
                 e => e.name === container.name
               )}
               onClick={() =>
-                setSelectedContainers((state: containerProps[]) =>
+                setSelectedContainers((state: ItemType[]) =>
                   manageSelection({ state, container })
                 )
               }

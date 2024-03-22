@@ -1,11 +1,11 @@
 import ContainerAmountCard from "components/ContainerAmountCard";
-import { ItemIcon } from "components/ItemIcon";
-import { containerProps } from "data/containers";
+import { ItemIconButton } from "components/ItemIcon";
+import { ContainerType } from "data/containers";
 import { ItemType } from "data/itemType";
 import { FC } from "react";
 
 type ContainerCols = {
-  selectedContainers: containerProps[];
+  selectedContainers: ContainerType[];
   item: ItemType;
   containersCount: number[];
 };
@@ -16,15 +16,20 @@ const ContainerCols: FC<ContainerCols> = ({
 }) => {
   return (
     <div className="flex mt-6">
-      {selectedContainers.map((container: containerProps) => {
+      {selectedContainers.map(container => {
         return (
-          <div key={container.icon} className="w-64">
+          <div key={container?.name} className="w-64">
             <div className="border-b flex border-neutral-700  pb-2 items-center space-x-3">
-              <ItemIcon name={container.icon} className="w-10" />
+              <ItemIconButton isStatic item={container} size="md" />
               <div>
-                <div className="text-lg font-semibold">{container.name}</div>
-                <div className="text-xs opacity-50">
-                  {container.slots} Stack size
+                <div className="text-lg font-medium font-title">
+                  {container.localized_name?.en ?? container.name}
+                </div>
+                <div className="text-xs  flex space-x-1">
+                  <span className="text-yellow-500 font-semibold">
+                    {container.stack_count}
+                  </span>
+                  <span className="opacity-70">Available slot</span>
                 </div>
               </div>
             </div>

@@ -1,11 +1,11 @@
 import clsx from "clsx";
-import { containerProps } from "data/containers";
+import { ContainerType } from "data/containers";
 import { ItemType } from "data/itemType";
 import { useToggle } from "hook/useToggle";
 import { FC } from "react";
 
 export type containerAmountCardsProps = {
-  container: containerProps;
+  container: ContainerType;
   item: ItemType;
   count: number;
 };
@@ -19,7 +19,7 @@ const ContainerAmountCard: FC<containerAmountCardsProps> = ({
   return (
     <div
       className={clsx(
-        "bg-neutral-700 rounded p-2 flex space-x-4 hover:border-l-yellow-600 border-l-4 border-l-neutral-700 transition-all",
+        "bg-neutral-700 cursor-help group rounded p-2 flex space-x-4 hover:border-l-yellow-600 border-l-4 border-l-neutral-700 transition-all",
         {
           "border-l-yellow-600": value,
         }
@@ -31,10 +31,10 @@ const ContainerAmountCard: FC<containerAmountCardsProps> = ({
       </div>
       <div className="pr-2 ">
         <div className="font-medium text-xl">
-          {(item.stack_size * container.slots * count).toLocaleString()}
+          {(item.stack_size * container.stack_count * count).toLocaleString()}
         </div>
-        <div className="opacity-50 text-xs">
-          {item.stack_size} x {container.slots} x {count}
+        <div className="opacity-70 text-sm group-hover:opacity-100 group-hover:text-yellow-500">
+          {item.stack_size} x {container.stack_count} x {count}
         </div>
       </div>
     </div>
