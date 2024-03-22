@@ -1,13 +1,20 @@
+import { useParams } from "react-router-dom";
 import Layout from "core/Layout";
 import { ContainerType, containers } from "data/containers";
 import { useEffect, useState } from "react";
 import ContainerCols from "./ContainerCols";
-import ItemsSelector from "./ItemsSelector";
-import { ItemType } from "data/itemType";
+import { ItemType, NameProp } from "data/itemType";
 import SelectedItemCard from "./SelectedItemCard";
 import ContainersSelector from "./ContainersSelector";
+import { items } from "data/vanilla-1.1.19.json";
+import ItemsSelector from "components/ItemsSelector";
 
-const MainPage = () => {
+type ParamType = {
+  itemName: NameProp | string;
+};
+
+const Item = () => {
+  const { itemName } = useParams<ParamType>();
   const [item, setItem] = useState<ItemType>();
   const [selectedContainers, setSelectedContainers] = useState<ContainerType[]>(
     []
@@ -17,13 +24,14 @@ const MainPage = () => {
   ]);
   useEffect(() => {
     // setItem();
-    // @ts-ignore
     setSelectedContainers([containers[0], containers[1], containers[2]]);
-  }, []);
+    // @ts-ignore
+    setItem(items[itemName]);
+  }, [itemName]);
   return (
     <Layout>
       <div className="py-12">
-        <ItemsSelector setItem={setItem} item={item} />
+        <ItemsSelector item={item} />
 
         {!!item && (
           <>
@@ -49,4 +57,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default Item;

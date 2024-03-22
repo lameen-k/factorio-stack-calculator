@@ -18,3 +18,7 @@ export type ItemIngredientType = {
   amount: number;
   name: NameProp;
 };
+
+export type dbType = {
+  items: ItemType[];
+};

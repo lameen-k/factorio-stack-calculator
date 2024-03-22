@@ -2,14 +2,16 @@ import clsx from "clsx";
 import { ItemIconButton } from "components/ItemIcon";
 import { ItemType } from "data/itemType";
 import useItems from "hook/useItems";
-import { useState } from "react";
+import { FC, useState } from "react";
+import { generatePath, useNavigate } from "react-router-dom";
+import { RoutePath } from "routes/constants";
 
-type ItemsSelectorProps = {
-  setItem: any;
-  item: ItemType;
+type ItemsSelector = {
+  item?: ItemType;
 };
-const ItemsSelector = (props: ItemsSelectorProps) => {
-  const { setItem, item } = props;
+
+const ItemsSelector: FC<ItemsSelector> = ({ item }) => {
+  const navigate = useNavigate();
   const { groupedItems, groupsList } = useItems();
   const [selectedGroup, setSelectedGroup] = useState<string>("logistics");
 
@@ -41,8 +43,10 @@ const ItemsSelector = (props: ItemsSelectorProps) => {
               key={el.name}
               item={el}
               size="sm"
-              onClick={() => setItem(el)}
-              isSelected={el.name === item?.name}
+              onClick={() =>
+                navigate(generatePath(RoutePath.ITEM, { itemName: el.name }))
+              }
+              isSelected={el.name === item.name}
             />
           );
         })}

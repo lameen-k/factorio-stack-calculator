@@ -14,6 +14,8 @@ export default defineConfig({
       data: `${path.resolve(__dirname, "./src/data/")}`,
       hook: `${path.resolve(__dirname, "./src/shared/hooks")}`,
       util: `${path.resolve(__dirname, "./src/shared/utils")}`,
+      routes: `${path.resolve(__dirname, "./src/routes")}`,
+      pages: `${path.resolve(__dirname, "./src/pages")}`,
     },
   },
 });

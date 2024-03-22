@@ -10,6 +10,7 @@ export default function useItems(itemName = null) {
   const [itemsAr, setItemsAr] = useState<ItemType[]>([]);
   const [groupedItems, setGroupedItems] = useState<any>({});
   const [groupsList, setGroupsList] = useState([]);
+  const [itemObject, setItemObject] = useState<ItemType>();
 
   const applyCustomOrder = (field, arr, desiredOrder) => {
     const orderForIndexVals = desiredOrder.slice(0).reverse();
@@ -46,6 +47,9 @@ export default function useItems(itemName = null) {
   };
 
   useEffect(() => {
+    if (itemName) {
+      setItemObject(items[itemName]);
+    }
     const itms: ItemType[] = Object.values(items)
       .filter(i => {
         return (
@@ -83,5 +87,6 @@ export default function useItems(itemName = null) {
     itemIngredients,
     itemResults,
     hasReceipe,
+    itemObject,
   };
 }

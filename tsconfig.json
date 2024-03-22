@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -30,6 +31,7 @@
       "data/*": ["./data/*"],
       "hook/*": ["./shared/hooks/*"],
       "util/*": ["./shared/utils/*"],
+      "routes/*": ["./routes/*"],
     }
   },
   "include": ["src"],
