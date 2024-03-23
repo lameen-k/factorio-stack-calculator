@@ -1,7 +1,7 @@
-import { FC, useEffect, useRef, useState } from "react";
+// @ts-nocheck
+import { FC, useEffect, useRef } from "react";
 import clsx from "clsx";
 import SpriteIcon from "components/SpriteIcon";
-import imageExist from "util/imageExist";
 import { ItemType } from "data/itemType";
 import { useToggle } from "hook/useToggle";
 

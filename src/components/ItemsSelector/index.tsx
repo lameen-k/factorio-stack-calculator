@@ -46,7 +46,7 @@ const ItemsSelector: FC<ItemsSelector> = ({ item }) => {
               onClick={() =>
                 navigate(generatePath(RoutePath.ITEM, { itemName: el.name }))
               }
-              isSelected={el.name === item.name}
+              isSelected={el.name === item?.name}
             />
           );
         })}
