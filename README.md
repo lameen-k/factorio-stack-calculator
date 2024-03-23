@@ -10,7 +10,11 @@ Check out the [Demo](http://factorio.lameen.co/) to see it in action.
 
 ## Data
 
-Items & gane data sources from [kirkmcdonald.github.io](https://github.com/KirkMcDonald/kirkmcdonald.github.io/blob/master/data/vanilla-1.1.19.json)
+Items, sprite image & game data sources from [kirkmcdonald.github.io](https://github.com/KirkMcDonald/kirkmcdonald.github.io/blob/master/data/vanilla-1.1.19.json)
+
+## Screenshot
+
+![](https://factorio.lameen.co/readme.png)
 
 ## License
 
