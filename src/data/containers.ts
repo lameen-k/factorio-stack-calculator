@@ -7,7 +7,7 @@ export type ContainerType = ItemType & {
 
 export const containers: ContainerType[] = [
   { ...items["steel-chest"], stack_count: 48 },
-  { ...items["cargo-wagon"], stack_count: 50 },
-  { ...items["spidertron"], stack_count: 100 },
+  { ...items["cargo-wagon"], stack_count: 40 },
+  { ...items["spidertron"], stack_count: 80 },
   { ...items["car"], stack_count: 100 },
 ];

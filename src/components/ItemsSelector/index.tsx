@@ -8,12 +8,15 @@ import { RoutePath } from "routes/constants";
 
 type ItemsSelector = {
   item?: ItemType;
+  group?: string;
 };
 
-const ItemsSelector: FC<ItemsSelector> = ({ item }) => {
+const ItemsSelector: FC<ItemsSelector> = ({ item, group }) => {
   const navigate = useNavigate();
   const { groupedItems, groupsList } = useItems();
-  const [selectedGroup, setSelectedGroup] = useState<string>("logistics");
+  const [selectedGroup, setSelectedGroup] = useState<string>(
+    group ?? "logistics"
+  );
 
   return (
     <>
@@ -44,7 +47,12 @@ const ItemsSelector: FC<ItemsSelector> = ({ item }) => {
               item={el}
               size="sm"
               onClick={() =>
-                navigate(generatePath(RoutePath.ITEM, { itemName: el.name }))
+                navigate(
+                  generatePath(RoutePath.ITEM, {
+                    itemName: el.name,
+                    group: selectedGroup,
+                  })
+                )
               }
               isSelected={el.name === item?.name}
             />

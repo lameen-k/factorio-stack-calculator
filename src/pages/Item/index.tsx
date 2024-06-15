@@ -11,10 +11,11 @@ import ItemsSelector from "components/ItemsSelector";
 
 type ParamType = {
   itemName: NameProp | string;
+  group?: string;
 };
 
 const Item = () => {
-  const { itemName } = useParams<ParamType>();
+  const { itemName, group } = useParams<ParamType>();
   const [item, setItem] = useState<ItemType>();
   const [selectedContainers, setSelectedContainers] = useState<ContainerType[]>(
     []
@@ -31,7 +32,7 @@ const Item = () => {
   return (
     <Layout>
       <div className="py-12">
-        <ItemsSelector item={item} />
+        <ItemsSelector item={item} group={group} />
 
         {!!item && (
           <>
